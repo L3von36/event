@@ -33,4 +33,5 @@ export const authConfig = {
         },
     },
     providers: [], // Add empty providers to satisfy type, will be populated in auth.ts
+    trustHost: true,
 } satisfies NextAuthConfig;
