@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
             </h2>
             <div className="prose prose-invert mb-8">
               <p className="text-primary-100 text-lg leading-relaxed">
-                Akirma (አኪርማ የዝግጅት አዘጋጅ) is the leading <strong>event organizer in Ethiopia</strong>. 
+                Akirma (አክርማ ኢቨንት) is the leading <strong>event organizer in Ethiopia</strong>. 
                 We bring cultural excellence to every celebration, from traditional Habesha weddings to high-scale corporate events in Addis Ababa.
               </p>
             </div>
@@ -64,7 +64,7 @@ const WhyChooseUs = () => {
               className="aspect-square bg-white/10 rounded-2xl p-8 backdrop-blur-sm border border-white/20 relative overflow-hidden"
             >
                <Image
-                 src="/images/why-us.png"
+                 src="/images/why-us.jpg"
                  alt="Professional event planning team"
                  fill
                  className="object-cover rounded-xl"

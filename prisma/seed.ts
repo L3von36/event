@@ -51,10 +51,10 @@ async function main() {
 
     // 4. Seed Events
     const events = [
-        { title: 'Royal Ethiopian Wedding', titleAm: 'የንጉሳዊ ሰርግ', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2025', image: '/images/event-wedding.png', featured: true },
-        { title: 'Tech Innovation Summit', titleAm: 'የቴክኖሎጂ ፈጠራ ጉባኤ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Skylight Hotel', locationAm: 'ስካይላይት ሆቴል', year: '2024', image: 'https://images.unsplash.com/photo-1540575861501-7ad060e39fe5?auto=format&fit=crop&q=80', featured: true },
-        { title: 'Meskel Celebration', titleAm: 'የመስቀል በዓል አከባበር', category: 'Cultural', categoryAm: 'ባህላዊ', location: 'Meskel Square', locationAm: 'መስቀል አደባባይ', year: '2024', image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80', featured: true },
-        { title: 'Summer Music Festival', titleAm: 'የበጋ ሙዚቃ ፌስቲቫል', category: 'Concert', categoryAm: 'ኮንሰርት', location: 'Ghion Hotel', locationAm: 'ጊዮን ሆቴል', year: '2023', image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80', featured: true },
+        { title: 'Royal Ethiopian Wedding', titleAm: 'የንጉሳዊ ሰርግ', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2025', image: '/images/events/photo_2026-01-29_22-06-04.jpg', featured: true },
+        { title: 'Tech Innovation Summit', titleAm: 'የቴክኖሎጂ ፈጠራ ጉባኤ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Skylight Hotel', locationAm: 'ስካይላይት ሆቴል', year: '2024', image: '/images/events/photo_2026-01-29_22-05-56.jpg', featured: true },
+        { title: 'Meskel Celebration', titleAm: 'የመስቀል በዓል አከባበር', category: 'Cultural', categoryAm: 'ባህላዊ', location: 'Meskel Square', locationAm: 'መስቀል አደባባይ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-09.jpg', featured: true },
+        { title: 'Summer Music Festival', titleAm: 'የበጋ ሙዚቃ ፌስቲቫል', category: 'Concert', categoryAm: 'ኮንሰርት', location: 'Ghion Hotel', locationAm: 'ጊዮን ሆቴል', year: '2023', image: '/images/events/photo_2026-01-29_22-06-30.jpg', featured: true },
     ];
 
     for (const e of events) {

@@ -5,7 +5,7 @@ export default function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "EventVenue",
     "name": "Akirma Event Organizer",
-    "alternateName": "አኪርማ የዝግጅት አዘጋጅ",
+    "alternateName": "አክርማ ኢቨንት",
     "image": "https://akirma.com/logo.png",
     "@id": "https://akirma.com",
     "url": "https://akirma.com",

@@ -31,6 +31,7 @@ const Hero = () => {
           fill
           className="object-cover"
           priority
+          
         />
         <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 via-black/50 to-blue-900/60 mix-blend-multiply" />
       </motion.div>
@@ -49,11 +50,25 @@ const Hero = () => {
             {t.hero.subheadline}
           </p>
 
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="w-full sm:w-auto">
+            <Button 
+              size="lg" 
+              className="w-full sm:w-auto"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               {t.hero.cta_primary}
             </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto border-white text-white hover:bg-white/10 hover:text-white">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="w-full sm:w-auto border-white text-white hover:bg-white/10 hover:text-white"
+              onClick={() => {
+                document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               {t.hero.cta_secondary}
             </Button>
           </div>
