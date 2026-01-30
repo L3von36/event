@@ -203,6 +203,12 @@ export async function getLeads() {
     });
 }
 
+export async function getLead(id: string) {
+    return await prisma.contactRequest.findUnique({
+        where: { id }
+    });
+}
+
 // --- SYSTEM FUNCTIONS ---
 
 export async function exportDatabaseData(): Promise<{ success: boolean; data?: any; message?: string }> {
