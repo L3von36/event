@@ -11,9 +11,10 @@ import {
   Search,
   CheckCircle2,
   Clock,
-  MoreVertical
+  Trash2,
+  AlertCircle
 } from 'lucide-react';
-import { getLeads } from '@/lib/actions';
+import { getLeads, updateLead, deleteLead } from '@/lib/actions';
 import Link from 'next/link';
 
 export default function LeadsPage() {
@@ -114,9 +115,34 @@ export default function LeadsPage() {
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <span className="px-4 py-2 bg-slate-800 group-hover:bg-emerald-500/10 group-hover:text-emerald-500 text-slate-200 text-sm font-semibold rounded-lg transition-all">
-                          View Details
-                        </span>
+                        <button 
+                          onClick={async (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            await updateLead(lead.id, 'COMPLETED');
+                            setLeads(leads.map(l => l.id === lead.id ? { ...l, status: 'COMPLETED' } : l));
+                          }}
+                          className={`flex-1 lg:flex-none px-4 py-2 text-xs font-bold rounded-lg transition-all border ${
+                            lead.status === 'COMPLETED'
+                              ? 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20'
+                              : 'bg-slate-800 text-slate-300 border-white/5 hover:border-emerald-500/50 hover:text-emerald-500'
+                          }`}
+                        >
+                          {lead.status === 'COMPLETED' ? 'Completed' : 'Mark Done'}
+                        </button>
+                        <button 
+                          onClick={async (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            if (window.confirm('Delete this inquiry?')) {
+                              await deleteLead(lead.id);
+                              setLeads(leads.filter(l => l.id !== lead.id));
+                            }
+                          }}
+                          className="p-2 text-slate-500 hover:text-red-500 transition-colors"
+                        >
+                          <Trash2 className="w-5 h-5" />
+                        </button>
                       </div>
                     </div>
                   </div>

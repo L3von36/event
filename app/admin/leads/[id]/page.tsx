@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useState, use } from 'react';
-import { getLead } from '@/lib/actions';
-import { notFound } from 'next/navigation';
+import { getLead, updateLead, deleteLead } from '@/lib/actions';
+import { notFound, useRouter } from 'next/navigation';
 import { 
   ArrowLeft, 
   Mail, 
@@ -11,15 +11,20 @@ import {
   MessageSquare,
   Clock,
   User,
-  Tag
+  Tag,
+  CheckCircle2,
+  Trash2,
+  AlertCircle
 } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function LeadDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
+  const router = useRouter();
   const [lead, setLead] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [updating, setUpdating] = useState(false);
 
   useEffect(() => {
     getLead(resolvedParams.id).then(data => {
@@ -31,6 +36,24 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
     });
   }, [resolvedParams.id]);
 
+  const handleStatusUpdate = async (newStatus: string) => {
+    setUpdating(true);
+    const res = await updateLead(resolvedParams.id, newStatus);
+    if (res.success) {
+      setLead({ ...lead, status: newStatus });
+    }
+    setUpdating(false);
+  };
+
+  const handleDelete = async () => {
+    if (window.confirm('Are you sure you want to delete this inquiry?')) {
+      const res = await deleteLead(resolvedParams.id);
+      if (res.success) {
+        router.push('/admin/leads');
+      }
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -40,6 +63,14 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
   }
 
   if (!lead) return null;
+
+  const getStatusStyle = (status: string) => {
+    switch (status) {
+      case 'COMPLETED': return 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
+      case 'IN_PROGRESS': return 'bg-blue-500/10 text-blue-500 border-blue-500/20';
+      default: return 'bg-amber-500/10 text-amber-500 border-amber-500/20';
+    }
+  };
 
   return (
     <div className="space-y-8 max-w-4xl mx-auto">
@@ -82,11 +113,37 @@ export default function LeadDetailPage({ params }: { params: Promise<{ id: strin
                       minute: 'numeric'
                     })}
                   </span>
-                  <span className="px-3 py-1 bg-emerald-500/10 text-emerald-500 text-xs font-bold uppercase tracking-widest rounded-full">
-                    New Inquiry
+                  <span className={`px-3 py-1 border rounded-full text-xs font-bold uppercase tracking-widest ${getStatusStyle(lead.status)}`}>
+                    {lead.status || 'NEW'}
                   </span>
                 </div>
               </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="flex bg-slate-800/50 p-1 rounded-xl border border-white/5">
+                {(['NEW', 'IN_PROGRESS', 'COMPLETED'] as const).map((status) => (
+                  <button
+                    key={status}
+                    onClick={() => handleStatusUpdate(status)}
+                    disabled={updating}
+                    className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
+                      lead.status === status 
+                        ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/20' 
+                        : 'text-slate-400 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    {status.replace('_', ' ')}
+                  </button>
+                ))}
+              </div>
+              <button 
+                onClick={handleDelete}
+                className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-500 hover:bg-red-500 hover:text-white transition-all shadow-lg shadow-red-500/5"
+                title="Delete Inquiry"
+              >
+                <Trash2 className="w-5 h-5" />
+              </button>
             </div>
           </div>
         </div>

@@ -209,6 +209,30 @@ export async function getLead(id: string) {
     });
 }
 
+export async function updateLead(id: string, status: string): Promise<ActionResponse> {
+    try {
+        await prisma.contactRequest.update({
+            where: { id },
+            data: { status }
+        });
+        revalidatePath("/admin/leads");
+        revalidatePath(`/admin/leads/${id}`);
+        return { success: true, message: "Status updated successfully" };
+    } catch (error) {
+        return { success: false, message: "Failed to update status" };
+    }
+}
+
+export async function deleteLead(id: string): Promise<ActionResponse> {
+    try {
+        await prisma.contactRequest.delete({ where: { id } });
+        revalidatePath("/admin/leads");
+        return { success: true, message: "Inquiry deleted successfully" };
+    } catch (error) {
+        return { success: false, message: "Failed to delete inquiry" };
+    }
+}
+
 // --- SYSTEM FUNCTIONS ---
 
 export async function exportDatabaseData(): Promise<{ success: boolean; data?: any; message?: string }> {
