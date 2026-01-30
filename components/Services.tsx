@@ -11,9 +11,13 @@ const iconMap: Record<string, any> = {
   Megaphone, Calendar, Home, Lightbulb, Armchair, UtensilsCrossed, Baby 
 };
 
-const Services = ({ initialServices }: { initialServices?: any[] }) => {
+import Link from 'next/link';
+import Button from './ui/Button';
+
+const Services = ({ initialServices, limit, showSeeMore }: { initialServices?: any[], limit?: number, showSeeMore?: boolean }) => {
   const { t, language } = useLanguage();
-  const displayServices = initialServices || [];
+  const allServices = initialServices || [];
+  const displayServices = limit ? allServices.slice(0, limit) : allServices;
 
   return (
     <section id="services" className="py-20 bg-gray-50 dark:bg-gray-950">
@@ -58,6 +62,16 @@ const Services = ({ initialServices }: { initialServices?: any[] }) => {
             );
           })}
         </div>
+
+        {showSeeMore && (
+          <div className="mt-12 text-center">
+            <Link href="/services">
+              <Button size="lg" variant="outline">
+                {language === 'am' ? 'ሁሉንም አገልግሎቶች ይመልከቱ' : 'See All Services'}
+              </Button>
+            </Link>
+          </div>
+        )}
       </Container>
     </section>
   );

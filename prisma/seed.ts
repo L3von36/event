@@ -61,10 +61,26 @@ async function main() {
 
     // 4. Seed Events
     const events = [
+        // Featured Events
         { title: 'Royal Ethiopian Wedding', titleAm: 'የንጉሳዊ ሰርግ', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2025', image: '/images/events/photo_2026-01-29_22-06-04.jpg', featured: true },
         { title: 'Tech Innovation Summit', titleAm: 'የቴክኖሎጂ ፈጠራ ጉባኤ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Skylight Hotel', locationAm: 'ስካይላይት ሆቴል', year: '2024', image: '/images/events/photo_2026-01-29_22-05-56.jpg', featured: true },
         { title: 'Meskel Celebration', titleAm: 'የመስቀል በዓል አከባበር', category: 'Cultural', categoryAm: 'ባህላዊ', location: 'Meskel Square', locationAm: 'መስቀል አደባባይ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-09.jpg', featured: true },
         { title: 'Summer Music Festival', titleAm: 'የበጋ ሙዚቃ ፌስቲቫል', category: 'Concert', categoryAm: 'ኮንሰርት', location: 'Ghion Hotel', locationAm: 'ጊዮን ሆቴል', year: '2023', image: '/images/events/photo_2026-01-29_22-06-30.jpg', featured: true },
+
+        // Gallery Events (Additional Photos)
+        { title: 'Grand Wedding Reception', titleAm: 'ድንቅ የሰርግ ግብዣ', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2024', image: '/images/events/photo_2026-01-29_22-05-59.jpg', featured: false },
+        { title: 'Corporate Gala Dinner', titleAm: 'የኮርፖሬት እራት ግብዣ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Sheraton Addis', locationAm: 'ሸራተን አዲስ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-02.jpg', featured: false },
+        { title: 'Outdoor Cultural Festival', titleAm: 'የውጪ ባህላዊ ፌስቲቫል', category: 'Cultural', categoryAm: 'ባህላዊ', location: 'Entoto Park', locationAm: 'እንጦጦ ፓርክ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-07.jpg', featured: false },
+        { title: 'University Graduation', titleAm: 'የዩኒቨርሲቲ ምረቃ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Millennium Hall', locationAm: 'ሚሊኒየም አዳራሽ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-08.jpg', featured: false },
+        { title: 'Luxury Wedding Decor', titleAm: 'የቅንጦት ሰርግ ዲኮር', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Hilton Hotel', locationAm: 'ሂልተን ሆቴል', year: '2023', image: '/images/events/photo_2026-01-29_22-06-32.jpg', featured: false },
+        { title: 'International Conference', titleAm: 'ዓለም አቀፍ ኮንፈረንስ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'AU Center', locationAm: 'አፍሪካ ህብረት', year: '2023', image: '/images/events/photo_2026-01-29_22-06-33.jpg', featured: false },
+        { title: 'Private Birthday Party', titleAm: 'የልደት ድግስ', category: 'Social', categoryAm: 'ማህበራዊ', location: 'Bole', locationAm: 'ቦሌ', year: '2023', image: '/images/events/photo_2026-01-29_22-06-34.jpg', featured: false },
+        { title: 'Product Launch Event', titleAm: 'የምርት ማስጀመሪያ ዝግጅት', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Hyatt Regency', locationAm: 'ሃያት ሬጀንሲ', year: '2023', image: '/images/events/photo_2026-01-29_22-06-34 (2).jpg', featured: false },
+        { title: 'Public Concert', titleAm: 'የህዝብ ኮንሰርት', category: 'Concert', categoryAm: 'ኮንሰርት', location: 'Meskel Square', locationAm: 'መስቀል አደባባይ', year: '2023', image: '/images/events/photo_2026-01-29_22-06-36.jpg', featured: false },
+        { title: 'Exhibition Setup', titleAm: 'የኤግዚቢሽን ዝግጅት', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Exhibition Center', locationAm: 'ኤግዚቢሽን ማዕከል', year: '2023', image: '/images/events/photo_2026-01-29_22-06-37.jpg', featured: false },
+        { title: 'VIP Wedding Ceremony', titleAm: 'ልዩ የሰርግ ሥነ ስርዓት', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Friendship Park', locationAm: 'ወዳጅነት ፓርክ', year: '2023', image: '/images/events/photo_2026-01-29_22-06-37 (2).jpg', featured: false },
+        { title: 'Annual General Meeting', titleAm: 'ዓመታዊ ጠቅላላ ጉባኤ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Inter Luxury', locationAm: 'ኢንተር ሌግዠሪ', year: '2022', image: '/images/events/photo_2026-01-29_22-06-38.jpg', featured: false },
+        { title: 'Community Gathering', titleAm: 'የማህበረሰብ ስብሰባ', category: 'Social', categoryAm: 'ማህበራዊ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2022', image: '/images/events/photo_2026-01-29_22-06-38 (2).jpg', featured: false },
     ];
 
     for (const e of events) {

@@ -23,9 +23,9 @@ export default async function Home() {
     <main className="min-h-screen bg-white dark:bg-gray-950">
       <Header />
       <Hero />
-      <Services initialServices={services} />
+      <Services initialServices={services} limit={6} showSeeMore={true} />
       <VisionMission />
-      <FeaturedEvents initialEvents={events} />
+      <FeaturedEvents initialEvents={events} limit={4} showSeeMore={true} />
       <WhyChooseUs />
       <Testimonials initialTestimonials={testimonials} />
       <FAQ initialFaqs={faqs} />

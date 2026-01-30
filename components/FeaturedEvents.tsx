@@ -56,9 +56,10 @@ const EventCard = ({ event }: { event: any }) => {
   );
 };
 
-const FeaturedEvents = ({ initialEvents }: { initialEvents?: any[] }) => {
-  const { t } = useLanguage();
-  const displayEvents = initialEvents || [];
+const FeaturedEvents = ({ initialEvents, limit, showSeeMore }: { initialEvents?: any[], limit?: number, showSeeMore?: boolean }) => {
+  const { t, language } = useLanguage();
+  const allEvents = initialEvents || [];
+  const displayEvents = limit ? allEvents.slice(0, limit) : allEvents;
 
   return (
     <section id="events" className="py-20 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
@@ -72,7 +73,16 @@ const FeaturedEvents = ({ initialEvents }: { initialEvents?: any[] }) => {
               {t.events.description}
             </p>
           </div>
-          <Button variant="outline" className="dark:text-white dark:border-gray-700">{t.events.cta}</Button>
+          {/* Default CTA removed in favor of conditional See More below, or kept as secondary action if needed. 
+              The requirement implies a main 'See More' button at the bottom for the homepage view. 
+              If this was 'View Portfolio', we can keep it or hide it based on showSeeMore. 
+              Let's hide the top button if showSeeMore is true to avoid redundancy, or link it to /events.
+          */}
+          {!showSeeMore && (
+           <Link href="/events">
+             <Button variant="outline" className="dark:text-white dark:border-gray-700">{t.events.cta}</Button>
+           </Link>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -80,6 +90,16 @@ const FeaturedEvents = ({ initialEvents }: { initialEvents?: any[] }) => {
             <EventCard key={event.id || index} event={event} />
           ))}
         </div>
+
+        {showSeeMore && (
+          <div className="mt-12 text-center">
+            <Link href="/events">
+              <Button size="lg" variant="outline">
+                {language === 'am' ? 'ሁሉንም ዝግጅቶች ይመልከቱ' : 'See All Events'}
+              </Button>
+            </Link>
+          </div>
+        )}
       </Container>
     </section>
   );
