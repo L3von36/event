@@ -166,7 +166,7 @@ async function main() {
 
     // 6. Seed FAQ
     const faqs = [
-        { q: 'How far in advance should I book?', qAm: 'ከዝግጅቱ ስንት ጊዜ በፊት መያዝ አለብኝ?', a: 'For major weddings and large conferences, we recommend booking at least 6-12 months in advance. Smaller corporate events can be often arranged within 2-3 months.', aAm: 'ለትላልቅ ሰርጎች እና ስብሰባዎች ከ6-12 ወራት በፊት ቢይዙ ይመከራል። ለትንንሽ ዝግጅቶች ከ2-3 ወራት በፊት በቂ ነው።', order: 1 },
+        { q: 'How far in advance should I book?', qAm: 'ከዝግጅቱ ስንት ጊዜ በፊት መያዝ አለብኝ?', a: 'For major weddings and large conferences, we recommend booking at least 15-30 Days in advance. Smaller corporate events can be often arranged within 15-30 Days.', aAm: 'ለትላልቅ ሰርጎች እና ለትናንሽ የኮርፖሬት ዝግጅቶች ቢያንስ ከ15-30 ቀናት በፊት ቢይዙ ይመከራል።', order: 1 },
         { q: 'Do you handle events outside of Addis Ababa?', qAm: 'ከአዲስ አበባ ውጭ ዝግጅቶችን ታዘጋጃላችሁ?', a: 'Yes! We coordinate destination weddings and corporate retreats across Ethiopia, including Lalibela, Bahir Dar, and Hawassa.', aAm: 'አዎ! በኢትዮጵያ ውስጥ በማንኛውም ቦታ (ላሊበላ፣ ባህር ዳር፣ ሀዋሳ...) ዝግጅቶችን እናዘጋጃለን።', order: 2 },
         { q: 'What is your payment structure?', qAm: 'የክፍያ ሁኔታው እንዴት ነው?', a: 'We typically require a 30% deposit to secure your date, 40% midway through planning, and the final 30% one week before the event.', aAm: 'ቀኑን ለመያዝ 30%፣ በዝግጅት ሂደት ላይ 40%፣ እና ዝግጅቱ ከመጀመሩ ከአንድ ሳምንት በፊት ቀሪውን 30% ክፍያ እንቀበላለን።', order: 3 },
     ];
