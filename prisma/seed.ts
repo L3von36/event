@@ -62,25 +62,65 @@ async function main() {
     // 4. Seed Events
     const events = [
         // Featured Events
-        { title: 'Royal Ethiopian Wedding', titleAm: 'የንጉሳዊ ሰርግ', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2025', image: '/images/events/photo_2026-01-29_22-06-04.jpg', featured: true },
-        { title: 'Tech Innovation Summit', titleAm: 'የቴክኖሎጂ ፈጠራ ጉባኤ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Skylight Hotel', locationAm: 'ስካይላይት ሆቴል', year: '2024', image: '/images/events/photo_2026-01-29_22-05-56.jpg', featured: true },
-        { title: 'Meskel Celebration', titleAm: 'የመስቀል በዓል አከባበር', category: 'Cultural', categoryAm: 'ባህላዊ', location: 'Meskel Square', locationAm: 'መስቀል አደባባይ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-09.jpg', featured: true },
-        { title: 'Summer Music Festival', titleAm: 'የበጋ ሙዚቃ ፌስቲቫል', category: 'Concert', categoryAm: 'ኮንሰርት', location: 'Ghion Hotel', locationAm: 'ጊዮን ሆቴል', year: '2023', image: '/images/events/photo_2026-01-29_22-06-30.jpg', featured: true },
+        {
+            title: 'AASTU Student Sport Opening Ceremony',
+            titleAm: 'የአአሳይቶ ተማሪዎች ስፖርት መክፈቻ ሥነ-ስርዓት',
+            category: 'Corporate',
+            categoryAm: 'ኮርፖሬት',
+            location: 'AASTU',
+            locationAm: 'አአሳይቶ',
+            year: '2025',
+            image: '/images/events/Aastu student sport opening ceremony.jpg',
+            featured: true
+        },
+        {
+            title: 'AA City Gov Peace & Security Celebration (20,000 People)',
+            titleAm: 'የአዲስ አበባ ከተማ አስተዳደር የሰላም እና ፀጥታ አከባበር (20,000 ሰው)',
+            category: 'Government',
+            categoryAm: 'መንግስታዊ',
+            location: 'Abebe Bikila Stadium',
+            locationAm: 'አበበ ቢቂላ ስታዲየም',
+            year: '2024',
+            image: '/images/events/Addis ababa city government peace and security 20,000 celebrating ceremony to abebe bikila stadium.jpg',
+            featured: true
+        },
+        {
+            title: 'Traditional Wedding Decoration',
+            titleAm: 'ባህላዊ የሰርግ ዲኮር',
+            category: 'Wedding',
+            categoryAm: 'ሰርግ',
+            location: 'Addis Ababa',
+            locationAm: 'አዲስ አበባ',
+            year: '2024',
+            image: '/images/events/Traditional wedding decoration.jpg',
+            featured: true
+        },
+        {
+            title: 'AASTU Students Award',
+            titleAm: 'የአአሳይቶ ተማሪዎች ሽልማት',
+            category: 'Corporate',
+            categoryAm: 'ኮርፖሬት',
+            location: 'AASTU',
+            locationAm: 'አአሳይቶ',
+            year: '2024',
+            image: '/images/events/Aastu students award.jpg',
+            featured: true
+        },
 
-        // Gallery Events (Additional Photos)
-        { title: 'Grand Wedding Reception', titleAm: 'ድንቅ የሰርግ ግብዣ', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2024', image: '/images/events/photo_2026-01-29_22-05-59.jpg', featured: false },
-        { title: 'Corporate Gala Dinner', titleAm: 'የኮርፖሬት እራት ግብዣ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Sheraton Addis', locationAm: 'ሸራተን አዲስ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-02.jpg', featured: false },
-        { title: 'Outdoor Cultural Festival', titleAm: 'የውጪ ባህላዊ ፌስቲቫል', category: 'Cultural', categoryAm: 'ባህላዊ', location: 'Entoto Park', locationAm: 'እንጦጦ ፓርክ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-07.jpg', featured: false },
-        { title: 'University Graduation', titleAm: 'የዩኒቨርሲቲ ምረቃ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Millennium Hall', locationAm: 'ሚሊኒየም አዳራሽ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-08.jpg', featured: false },
-        { title: 'Luxury Wedding Decor', titleAm: 'የቅንጦት ሰርግ ዲኮር', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Hilton Hotel', locationAm: 'ሂልተን ሆቴል', year: '2023', image: '/images/events/photo_2026-01-29_22-06-32.jpg', featured: false },
-        { title: 'International Conference', titleAm: 'ዓለም አቀፍ ኮንፈረንስ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'AU Center', locationAm: 'አፍሪካ ህብረት', year: '2023', image: '/images/events/photo_2026-01-29_22-06-33.jpg', featured: false },
-        { title: 'Private Birthday Party', titleAm: 'የልደት ድግስ', category: 'Social', categoryAm: 'ማህበራዊ', location: 'Bole', locationAm: 'ቦሌ', year: '2023', image: '/images/events/photo_2026-01-29_22-06-34.jpg', featured: false },
-        { title: 'Product Launch Event', titleAm: 'የምርት ማስጀመሪያ ዝግጅት', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Hyatt Regency', locationAm: 'ሃያት ሬጀንሲ', year: '2023', image: '/images/events/photo_2026-01-29_22-06-34 (2).jpg', featured: false },
-        { title: 'Public Concert', titleAm: 'የህዝብ ኮንሰርት', category: 'Concert', categoryAm: 'ኮንሰርት', location: 'Meskel Square', locationAm: 'መስቀል አደባባይ', year: '2023', image: '/images/events/photo_2026-01-29_22-06-36.jpg', featured: false },
-        { title: 'Exhibition Setup', titleAm: 'የኤግዚቢሽን ዝግጅት', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Exhibition Center', locationAm: 'ኤግዚቢሽን ማዕከል', year: '2023', image: '/images/events/photo_2026-01-29_22-06-37.jpg', featured: false },
-        { title: 'VIP Wedding Ceremony', titleAm: 'ልዩ የሰርግ ሥነ ስርዓት', category: 'Wedding', categoryAm: 'ሰርግ', location: 'Friendship Park', locationAm: 'ወዳጅነት ፓርክ', year: '2023', image: '/images/events/photo_2026-01-29_22-06-37 (2).jpg', featured: false },
-        { title: 'Annual General Meeting', titleAm: 'ዓመታዊ ጠቅላላ ጉባኤ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Inter Luxury', locationAm: 'ኢንተር ሌግዠሪ', year: '2022', image: '/images/events/photo_2026-01-29_22-06-38.jpg', featured: false },
-        { title: 'Community Gathering', titleAm: 'የማህበረሰብ ስብሰባ', category: 'Social', categoryAm: 'ማህበራዊ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2022', image: '/images/events/photo_2026-01-29_22-06-38 (2).jpg', featured: false },
+        // Gallery Events
+        { title: 'AA City Gov Peace & Security Celebration (15,000 People)', titleAm: 'የአዲስ አበባ ከተማ አስተዳደር የሰላም እና ፀጥታ አከባበር (15,000 ሰው)', category: 'Government', categoryAm: 'መንግስታዊ', location: 'Minilik School', locationAm: 'ምኒልክ ትምህርት ቤት', year: '2024', image: '/images/events/Addis ababa city government peace and security 15,000 peoples celebrating ceremony to minilik school.jpg', featured: false },
+        { title: 'All University Students Award Ceremony', titleAm: 'የሁሉም ዩኒቨርሲቲ ተማሪዎች የሽልማት ሥነ-ስርዓት', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2024', image: '/images/events/All university students award ceremony.jpg', featured: false },
+        { title: 'Big Aluminum Tent & Flower Stand', titleAm: 'ትልቅ የአሉሚኒየም ድንኳን እና የአበባ ማስቀመጫ', category: 'Decoration', categoryAm: 'ዲኮር', location: 'Exhibition Center', locationAm: 'ኤግዚቢሽን ማዕከል', year: '2024', image: '/images/events/Big aluminum tent and flower stand to exhibition center.jpg', featured: false },
+        { title: 'Carpet & Chair Setup - Adwa Museum', titleAm: 'ምንጣፍ እና ወንበር ዝግጅት - ዓድዋ ሙዚየም', category: 'Decoration', categoryAm: 'ዲኮር', location: 'Adwa Museum', locationAm: 'ዓድዋ ሙዚየም', year: '2024', image: '/images/events/Carpet and chair close works to adwa musium.jpg', featured: false },
+        { title: 'Full Package Meeting Hall Setup', titleAm: 'የመሰብሰቢያ አዳራሽ ሙሉ ፓኬጅ ዝግጅት', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2024', image: '/images/events/Full package to meeting hall.jpg', featured: false },
+        { title: 'Gate Decoration', titleAm: 'የበሩ ዲኮር ዝግጅት', category: 'Decoration', categoryAm: 'ዲኮር', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2024', image: '/images/events/Gate together decoration.jpg', featured: false },
+        { title: 'Government Meeting Ceremony - Capital Hotel', titleAm: 'የመንግስት ስብሰባ ሥነ-ስርዓት - ካፒታል ሆቴል', category: 'Government', categoryAm: 'መንግስታዊ', location: 'Capital Hotel', locationAm: 'ካፒታል ሆቴል', year: '2024', image: '/images/events/Government meeting ceremony to capital hotel.jpg', featured: false },
+        { title: 'VIP Stage & Decor - Adwa Museum', titleAm: 'ቪአይፒ መድረክ እና ዲኮር - ዓድዋ ሙዚየም', category: 'Decoration', categoryAm: 'ዲኮር', location: 'Adwa Museum', locationAm: 'ዓድዋ ሙዚየም', year: '2024', image: '/images/events/Screen stage adey abeba carpet vip table Curtain and chair works to adwa musim.jpg', featured: false },
+        { title: 'Screen Stage & Backdrop - Adwa Museum', titleAm: 'ስክሪን መድረክ እና ዳራ - ዓድዋ ሙዚየም', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Adwa Museum', locationAm: 'ዓድዋ ሙዚየም', year: '2024', image: '/images/events/Screen stage and backdrop works to adwa musiem.jpg', featured: false },
+        { title: 'Screen Stage & Backdrop - AASTU University', titleAm: 'ስክሪን መድረክ እና ዳራ - አአሳይቶ ዩኒቨርሲቲ', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'AASTU', locationAm: 'አአሳይቶ', year: '2024', image: '/images/events/Screen stage snd backdrop works to aastu university.jpg', featured: false },
+        { title: 'Sport Academy Meeting - Haile Grand Hotel', titleAm: 'የስፖርት አካዳሚ ስብሰባ - ሃይሌ ግራንድ ሆቴል', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Haile Grand Hotel', locationAm: 'ሃይሌ ግራንድ ሆቴል', year: '2024', image: '/images/events/Sport academy meeting ceremony to haile grand hotel.jpg', featured: false },
+        { title: 'Students Closing Ceremony', titleAm: 'የተማሪዎች መዝጊያ ሥነ-ስርዓት', category: 'Corporate', categoryAm: 'ኮርፖሬት', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2024', image: '/images/events/Students closing ceremony.jpg', featured: false },
+        { title: 'Luxury Event Display', titleAm: 'ልዩ የዝግጅት ማሳያ', category: 'Social', categoryAm: 'ማህበራዊ', location: 'Addis Ababa', locationAm: 'አዲስ አበባ', year: '2024', image: '/images/events/photo_2026-01-29_22-06-34.jpg', featured: false },
     ];
 
     for (const e of events) {
