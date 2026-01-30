@@ -11,8 +11,7 @@ export const translations = {
             book: 'Book an Event',
         },
         hero: {
-            headline_prefix: 'We Create Unforgettable',
-            headline_span: 'Events in Ethiopia',
+            headline_main: 'Crafting Unforgettable Moments Across Ethiopia',
             subheadline: 'From traditional weddings to corporate conferences, we bring your vision to life with cultural elegance and professional execution.',
             cta_primary: 'Request a Quote',
             cta_secondary: 'View Our Events',
@@ -166,8 +165,7 @@ export const translations = {
             book: 'ዝግጅት ይያዙ',
         },
         hero: {
-            headline_prefix: 'የማይረሱ',
-            headline_span: 'ዝግጅቶችን በኢትዮጵያ',
+            headline_main: 'የማይረሱ ትውስታዎችን በመላ ኢትዮጵያ እንፈጥራለን',
             subheadline: 'ከባህላዊ ሰርግ እስከ ኮርፖሬት ስብሰባዎች፣ ራዕይዎን በባህላዊ ውበት እና በሙያዊ ብቃት ወደ እውን እንለውጣለን።',
             cta_primary: 'ዋጋ ይጠይቁ',
             cta_secondary: 'ዝግጅቶቻችንን ይመልከቱ',

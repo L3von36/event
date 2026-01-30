@@ -2,11 +2,14 @@
 
 import React from 'react';
 import Container from './ui/Container';
-import { Heart, Briefcase, Star, Music, Palette } from 'lucide-react';
+import { Heart, Briefcase, Star, Music, Palette, Megaphone, Calendar, Home, Lightbulb, Armchair, UtensilsCrossed, Baby } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { motion } from 'framer-motion';
 
-const iconMap: Record<string, any> = { Heart, Briefcase, Star, Music, Palette };
+const iconMap: Record<string, any> = { 
+  Heart, Briefcase, Star, Music, Palette, 
+  Megaphone, Calendar, Home, Lightbulb, Armchair, UtensilsCrossed, Baby 
+};
 
 const Services = ({ initialServices }: { initialServices?: any[] }) => {
   const { t, language } = useLanguage();

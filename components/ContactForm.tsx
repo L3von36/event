@@ -74,6 +74,7 @@ const ContactForm = () => {
                 <div>
                   <h4 className="font-bold text-gray-900 dark:text-white">{t.contact.labels.phone}</h4>
                   <p className="text-gray-600 dark:text-gray-400">+251 910 977 371</p>
+                  <p className="text-gray-600 dark:text-gray-400">+251 915 843 131</p>
                 </div>
               </div>
               

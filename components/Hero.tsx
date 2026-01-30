@@ -43,7 +43,7 @@ const Hero = () => {
            transition={{ duration: 0.8 }}
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 font-heading tracking-tight leading-[1.1]">
-            Professional <span className="text-primary">Event Organizer in Ethiopia</span>
+            {t.hero.headline_main}
           </h1>
           
           <p className="text-lg sm:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">

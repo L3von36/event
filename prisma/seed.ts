@@ -37,11 +37,21 @@ async function main() {
 
     // 3. Seed Services
     const services = [
+        // Original Event Type Services
         { name: 'Wedding Planning', nameAm: 'የሰርግ ዝግጅት', desc: 'Traditional and modern Ethiopian weddings tailored to your dreams.', descAm: 'እንደ ህልምዎ የተዘጋጁ ባህላዊ እና ዘመናዊ የኢትዮጵያ ሰርጎች።', iconName: 'Heart', order: 1 },
         { name: 'Corporate Events', nameAm: 'የኮርፖሬት ዝግጅቶች', desc: 'Professional conferences, product launches, and business meetings.', descAm: 'ሙያዊ ኮንፈረንሶች፣ የምርት ማስጀመሪያዎች እና የንግድ ስብሰባዎች።', iconName: 'Briefcase', order: 2 },
         { name: 'Cultural & Religious Events', nameAm: 'ባህላዊ እና ሃይማኖታዊ', desc: 'Timket, Meskel, holidays, and large-scale church gatherings.', descAm: 'ጥምቀት፣ መስቀል፣ በዓላት እና ትላልቅ የቤተክርስቲያን ጉባኤዎች።', iconName: 'Star', order: 3 },
         { name: 'Concerts & Festivals', nameAm: 'ኮንሰርቶች እና ፌስቲቫሎች', desc: 'Full-scale stage, sound, and crowd management for major events.', descAm: 'ለታላላቅ ዝግጅቶች ሙሉ የመድረክ፣ የድምጽ እና የህዝብ አስተዳደር።', iconName: 'Music', order: 4 },
         { name: 'Decoration & Setup', nameAm: 'ዲኮር እና ቅንብር', desc: 'Breathtaking venue design, lighting, and cultural aesthetics.', descAm: 'አስደናቂ የቦታ ንድፍ፣ መብራት እና ባህላዊ ውበት።', iconName: 'Palette', order: 5 },
+
+        // Additional Service Offerings
+        { name: 'Advert & Promotion', nameAm: 'ማስታወቂያ እና ማስተዋወቂያ', desc: 'Strategic marketing campaigns and promotional materials for your events.', descAm: 'ለዝግጅቶችዎ ስልታዊ የግብይት ዘመቻዎች እና የማስተዋወቂያ ቁሳቁሶች።', iconName: 'Megaphone', order: 6 },
+        { name: 'Event Organization', nameAm: 'የዝግጅት አደረጃጀት', desc: 'Complete end-to-end event planning and coordination services.', descAm: 'ሙሉ ለሙሉ የዝግጅት እቅድ እና ቅንጅት አገልግሎቶች።', iconName: 'Calendar', order: 7 },
+        { name: 'Stage & Tent Rent', nameAm: 'መድረክ እና ድንኳን ኪራይ', desc: 'Professional stage setups and high-quality tent rentals.', descAm: 'ፕሮፌሽናል የመድረክ ማዘጋጃ እና ከፍተኛ ጥራት ያለው የድንኳን ኪራይ።', iconName: 'Home', order: 8 },
+        { name: 'Sound & Light Supply', nameAm: 'ድምጽ እና መብራት አቅርቦት', desc: 'State-of-the-art audio and lighting equipment for any event size.', descAm: 'ለማንኛውም የዝግጅት መጠን ዘመናዊ የድምጽ እና የብርሃን መሳሪያዎች።', iconName: 'Lightbulb', order: 9 },
+        { name: 'Chair & Table Supply', nameAm: 'ወንበር እና ጠረጴዛ አቅርቦት', desc: 'Elegant furniture rentals to accommodate all your guests.', descAm: 'ሁሉንም እንግዶችዎን ለማስተናገድ የሚያምር የቤት ዕቃ ኪራይ።', iconName: 'Armchair', order: 10 },
+        { name: 'Catering Supply', nameAm: 'የምግብ አቅርቦት', desc: 'Delicious catering services with traditional and modern cuisine.', descAm: 'ባህላዊ እና ዘመናዊ ምግብ ያለው ጣፋጭ የምግብ አቅርቦት አገልግሎት።', iconName: 'UtensilsCrossed', order: 11 },
+        { name: 'Kids Game Material Supply', nameAm: 'የልጆች ጨዋታ እቃ አቅርቦት', desc: 'Fun and safe entertainment equipment for children at your events.', descAm: 'በዝግጅቶችዎ ላይ ለልጆች አስደሳች እና ደህንነቱ የተጠበቀ የመዝናኛ መሳሪያዎች።', iconName: 'Baby', order: 12 },
     ];
 
     for (const s of services) {
