@@ -13,14 +13,14 @@ const FloatingChat = () => {
     {
       name: 'Telegram',
       icon: Send,
-      href: 'https://t.me/yourusername', // Replace with actual
+      href: 'https://t.me/akirmaeventsplc',
       color: 'bg-[#229ED9]',
       label: t.chat.telegram
     },
     {
       name: 'WhatsApp',
       icon: Phone,
-      href: 'https://wa.me/251911234567', // Replace with actual
+      href: 'https://wa.me/251915843131',
       color: 'bg-[#25D366]',
       label: t.chat.whatsapp
     }

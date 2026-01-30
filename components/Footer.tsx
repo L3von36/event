@@ -3,7 +3,7 @@
 import React from 'react';
 import Container from './ui/Container';
 import Link from 'next/link';
-import { Facebook, Instagram, Twitter, Send } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Send, Phone } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 const Footer = () => {
@@ -48,14 +48,14 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4 text-white">{t.footer.connect}</h3>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors group">
-                <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white" />
+              <a href="https://wa.me/251915843131" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#25D366] transition-colors group">
+                <Phone className="w-5 h-5 text-gray-400 group-hover:text-white" />
               </a>
               <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors group">
                 <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white" />
               </a>
-              <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors group">
-                <Send className="w-5 h-5 text-gray-400 group-hover:text-white" /> {/* Telegram icon substitute */}
+              <a href="https://t.me/akirmaeventsplc" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#229ED9] transition-colors group">
+                <Send className="w-5 h-5 text-gray-400 group-hover:text-white" />
               </a>
             </div>
             <div className="mt-6">
